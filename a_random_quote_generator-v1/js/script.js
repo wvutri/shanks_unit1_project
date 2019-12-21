@@ -1,6 +1,8 @@
 /******************************************
 Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
+Andrew Shanks
+December 2019
 ******************************************/
 
 // For assistance: 
@@ -9,6 +11,7 @@ project 1 - A Random Quote Generator
 
 /*** 
  * `quotes` array 
+ * Adding the 'quotes' array with 'quote', 'source', 'citation', and 'year' objects within the array. 
 ***/
 var ranNum;
 
@@ -43,7 +46,9 @@ var quotes = [
 
 
 /***
- * `getRandomQuote` function
+ * using the 'getRandomQuote function to pull a random quote
+ * Using Math.floor(Math.random()) to generate a random number from 0 to the total number of quotes
+ * then returning that quote
 ***/
 
 function getRandomQuote() {
@@ -53,6 +58,9 @@ function getRandomQuote() {
 
 /***
  * `printQuote` function
+ * Using 'words' to hold the random quote this being pulled. 
+ * using 'html' to create a string that will post the quote and any 'source', 'citation', 'year'. 
+ * outputDiv is to bring in the 'quote-box' clas and use that for my 'html' string
 ***/
 
 function printQuote(quotes) {
