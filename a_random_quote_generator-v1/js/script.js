@@ -12,8 +12,13 @@ December 2019
 /*** 
  * `quotes` array 
  * Adding the 'quotes' array with 'quote', 'source', 'citation', and 'year' objects within the array. 
+ * Calling the variable 'ranNum', 'rgbColor', and 'html' at the top of the page as well
 ***/
+
+var rgbColor;
 var ranNum;
+var html= '';
+var randomColor;
 
 var quotes = [
   {
@@ -49,7 +54,6 @@ var quotes = [
   },
 ];
 
-
 /***
  * using the 'getRandomQuote function to pull a random quote
  * Using Math.floor(Math.random()) to generate a random number from 0 to the total number of quotes
@@ -62,15 +66,36 @@ function getRandomQuote() {
 }
 
 /***
+* Creating a random number from 0 to 256
+***/
+
+function randomRGB() {
+  return Math.floor(Math.random() * 256);
+}
+
+/***
+ * Creating three random numbers from 0 to 256
+ ***/
+
+function randomColor () {
+  var color = 'rgb(';
+  color += randomRGB() + ',';
+  color += randomRGB() + ',';
+  color += randomRGB() + ')';
+  return color;
+}
+
+/***
  * `printQuote` function
  * Using 'words' to hold the random quote this being pulled. 
  * using 'html' to create a string that will post the quote and any 'source', 'citation', 'year'. 
  * outputDiv is to bring in the 'quote-box' clas and use that for my 'html' string
+ * Added function randomColor to shuffle the background color each page reload
+ * Added the function to overwrite the background color and assign a randomColor
 ***/
 
 function printQuote(quotes) {
   var words = getRandomQuote();
-  var html = '';
   html = '<p class="quote">' + words.quote + '</p>' + '';
   html += '<p class="source">' + words.source + ''; 
   if (words.citation != null) {
@@ -85,6 +110,7 @@ function printQuote(quotes) {
   html += '</p>';
   var outputDiv = document.getElementById('quote-box');
   outputDiv.innerHTML = html;
+  document.body.style.background = randomColor();
   return html;
 }
 
@@ -93,4 +119,4 @@ function printQuote(quotes) {
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, randomColor, false);
