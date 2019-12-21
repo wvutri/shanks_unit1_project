@@ -18,29 +18,34 @@ var ranNum;
 var quotes = [
   {
     quote: 'It never ceases to amaze me: we all love ourselves more than other people, but care more about their opinion than our own.',
-    source: 'Marcus Aurelius'
+    source: 'Marcus Aurelius',
+    tag: 'Stoicism'
   },
   {
     quote: 'Gretchen, stop trying to make fetch happen! It\'s not going to happen!',
     source: 'Regina',
     citation: 'Mean Girls',
-    year: 2004
+    year: 2004,
+    tag: 'Movie'  
   },
   {
     quote: 'Leave passion for the amateurs. Make it about what you feel you <i>must</i> do and say, not what you care about and wish to be.',
     source: 'Ryan Holiday',
     citation: 'Ego is the Enemy',
-    year: 2016
+    year: 2016,
+    tag: 'Book'
   },
   {
     quote: 'If you mean it when you say you\'re at the end of your rope and would rather quit, you actually have a unique chance to grow and improve yourself. A unique opportunity to experiment with different solutions, to try different tactics, or to take on new projects to add to your skill set.',
     source: 'Ryan Holiday',
     citation: 'The Obstacle is the Way',
-    year: 2014
+    year: 2014,
+    tag: 'Book'
   },
   {
     quote: 'You look like a thing and I love you.',
-    source: 'Janelle Shane\'s flirtatious bot'
+    source: 'Janelle Shane\'s flirtatious bot',
+    tag: 'Book'
   },
 ];
 
@@ -73,6 +78,9 @@ function printQuote(quotes) {
   };
   if (words.year != null) {
     html += '<span class="year">' + words.year + '</span>';
+  };
+  if (words.tag != null) {
+    html += '<span class="tag">' + words.tag + '</span>';
   };
   html += '</p>';
   var outputDiv = document.getElementById('quote-box');
