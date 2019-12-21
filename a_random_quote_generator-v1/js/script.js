@@ -12,7 +12,7 @@ December 2019
 /*** 
  * `quotes` array 
  * Adding the 'quotes' array with 'quote', 'source', 'citation', and 'year' objects within the array. 
- * Calling the variable 'ranNum', 'rgbColor', and 'html' at the top of the page as well
+ * Calling the variable 'ranNum', 'rgbColor', 'newQuoteTimer' and 'html' at the top of the page as well
 ***/
 
 var rgbColor;
@@ -113,6 +113,12 @@ function printQuote(quotes) {
   document.body.style.background = randomColor();
   return html;
 }
+
+/*** 
+ * Setting a timer for a new quote to populate - 30 seconds
+ ***/
+
+window.setInterval(printQuote, 30000);
 
 /***
  * click event listener for the print quote button
